@@ -7,6 +7,20 @@ class Game
     def initialize
         @turns_remaining = 12
         generate_player()
+        set_up_game()
+    end
+
+    def set_up_game
+        if @player.role == "m"
+            begin
+            @code = @player.make_puzzle
+            rescue ArgumentError => e
+                puts "Bad argument: #{e.message}"
+                retry
+            end
+        else
+            @code = generate_code()
+        end
     end
 
     def generate_player
@@ -32,13 +46,13 @@ class Game
         color_map = ColorList::COLORS.keys
         @code = ""
         numbers.each do |num|
-            code += color_map[num]
+            @code += color_map[num]
         end
         return @code
     end
 
-    def rate_guess
-
+    def rate_guess(guess)
+        
     end
 
     def play_game

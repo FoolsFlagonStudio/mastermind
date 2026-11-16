@@ -2,7 +2,7 @@ require_relative "game_colors"
 
 class Player
 
-    attr_reader = name
+    attr_reader  :name, :role
 
     def initialize(n, r)
         if n.strip = ""
