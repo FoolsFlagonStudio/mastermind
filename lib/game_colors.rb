@@ -12,10 +12,13 @@ module ColorList
     }.freeze
 
     def self.print_colors
-
         color_map = COLORS.map {|key, value| "#{key.colorize(value)}"}
         color_map = color_map.join("")
         return color_map
+    end
+
+    def possible_colors
+        return ColorList.keys
     end
 
 end

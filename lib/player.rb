@@ -5,11 +5,8 @@ class Player
     attr_reader  :name, :role
 
     def initialize(n, r)
-        if n.strip = ""
+        if n.strip! == ""
             raise ArgumentError, "Please provide a name"
-        end
-        if r != "m" || r != be
-            raise ArgumentError, "Please select a valid role"
         end
         @name = n
         @role = r
@@ -30,7 +27,7 @@ class Player
 
     end
 
-    def make_guess
+    def make_guess(rating)
         puts "Please submit a 4 character guess using any combination of the following: #{ColorList.print_colors}"
         
         guess = gets.chomp

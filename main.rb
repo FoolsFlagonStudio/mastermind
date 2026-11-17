@@ -1,10 +1,6 @@
 require_relative "lib/game.rb"
 require_relative "lib/game_colors.rb"
 
+game = Game.new()
 
-
-generate_code()
-
-# game = Game.new()
-
-# game.play
+game.play_game
