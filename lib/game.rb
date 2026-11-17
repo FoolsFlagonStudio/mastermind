@@ -71,7 +71,7 @@ class Game
     end
 
     def give_feedback(rating)
-        puts "You have #{rating["correct"]} spots correct, #{rating["misplaced"]} misplaced"
+        puts "You have #{rating[:correct]} spots correct, #{rating[:misplaced]} misplaced"
     end
 
     def play_game
